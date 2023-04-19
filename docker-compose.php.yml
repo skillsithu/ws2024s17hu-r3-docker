@@ -1,0 +1,17 @@
+services:
+  backend:
+    #image: webdevops/php-nginx-dev:8.2
+    build:
+      dockerfile: ./Dockerfile.php
+      context: .
+    ports:
+      - "2222:22"
+    volumes:
+      - ../www/backend-laravel:/app
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+    # command: 'php artisan serve --host=0.0.0.0'
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.backend.rule: HostRegexp(`{_:backend\..*}`)
+      traefik.http.services.backend.loadbalancer.server.port: 80
