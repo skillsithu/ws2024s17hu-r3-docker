@@ -49,6 +49,16 @@ services:
       traefik.enable: "true"
       traefik.http.routers.stage-planner.rule: HostRegexp(`{_:stage-planner\..*}`)
       traefik.http.services.stage-planner.loadbalancer.server.port: 80
+  speedtest:
+    image: nginx:latest
+    restart: always
+    volumes:
+      - ../www/speedtest:/usr/share/nginx/html:ro
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.runner-app.rule: HostRegexp(`{_:speedtest\..*}`)
+      traefik.http.services.runner-app.loadbalancer.server.port: 80
   backend-2:
     image: ws2024s17hu-r3-backend2
     restart: always
