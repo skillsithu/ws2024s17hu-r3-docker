@@ -50,13 +50,8 @@ services:
       traefik.http.routers.stage-planner.rule: HostRegexp(`{_:stage-planner\..*}`)
       traefik.http.services.stage-planner.loadbalancer.server.port: 80
   backend-2:
-    build:
-      dockerfile: Dockerfile
-      context: .
+    image: ws2024s17hu-r3-backend2
     restart: always
-    working_dir: /app
-    volumes:
-      - ../www/backend-2:/app
     labels:
       traefik.enable: "true"
       traefik.http.routers.backend-2.rule: HostRegexp(`{_:backend-2\..*}`)
