@@ -70,7 +70,7 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     environment:
-      PMA_HOST: "db"
+      PMA_HOST: "db.ub2023.hu"
       PMA_USER: "root"
       PMA_PASSWORD: "password"
       PMA_ARBITRARY: 1
@@ -80,6 +80,7 @@ services:
       traefik.http.services.pma.loadbalancer.server.port: 80
   db:
     image: mariadb:latest
+    hostname: db.ub2023.hu
     environment:
       - MARIADB_ROOT_PASSWORD=password
       - MARIADB_DATABASE=ub2023
