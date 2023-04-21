@@ -1,6 +1,8 @@
 services:
-  backend:
+  # BACKEND PHP (MODULE C) - backend.ub2023.hu
+  backend-laravel:
     #image: webdevops/php-nginx-dev:8.2
+    image: ws2024s17hur3-backend-laravel
     build:
       dockerfile: ./Dockerfile.php
       context: .

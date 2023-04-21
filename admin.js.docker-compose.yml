@@ -1,0 +1,12 @@
+services:
+  # ADMIN JS (MODULE C) - admin.ub2023.hu
+  admin-js:
+    image: nginx:latest
+    restart: always
+    volumes:
+      - ../www/admin-js:/usr/share/nginx/html:ro
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.admin-js.rule: HostRegexp(`{_:admin\..*}`)
+      traefik.http.services.admin-js.loadbalancer.server.port: 80

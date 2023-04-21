@@ -1,5 +1,7 @@
 services:
-  backend:
+  # BACKEND NODEJS (MODULE C) - backend.ub2023.hu
+  backend-nodejs:
+    image: ws2024s17hur3-backend-nodejs
     build:
       dockerfile: Dockerfile
       context: .
