@@ -64,13 +64,13 @@ services:
       traefik.enable: "true"
       traefik.http.routers.stage-planner.rule: HostRegexp(`{_:stage-planner\..*}`)
       traefik.http.services.stage-planner.loadbalancer.server.port: 80
-  # BACKEND-2 (STATIC) - backend-2.ub2023.hu
+  # BACKEND-2 (STATIC) - backend2.ub2023.hu
   backend-2:
     image: sisakb/ws2024s17hu-r3-backend2
     restart: always
     labels:
       traefik.enable: "true"
-      traefik.http.routers.backend-2.rule: HostRegexp(`{_:backend-2\..*}`)
+      traefik.http.routers.backend-2.rule: HostRegexp(`{_:backend2\..*}`)
       traefik.http.services.backend-2.loadbalancer.server.port: 80
   # PHPMYADMIN - pma.ub2023.hu
   phpmyadmin:
@@ -89,6 +89,7 @@ services:
   db:
     image: mariadb:latest
     hostname: db.ub2023.hu
+    restart: always
     environment:
       - MARIADB_ROOT_PASSWORD=password
       - MARIADB_DATABASE=ub2023
