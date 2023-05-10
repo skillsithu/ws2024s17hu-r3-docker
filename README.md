@@ -37,6 +37,15 @@ docker-compose -f docker-compose.yml -f backend.nodejs.docker-compose.yml -f adm
 - Backend-2: http://backend-2.ub2023-YY.hu
 - PhpMyAdmin: http://pma.ub2023-YY.hu
 
+In local environment:
+- Admin app: http://admin.localhost
+- Runner app: http://runner-app.localhost
+- Stage Planner app: http://stage-planner.localhost
+- Backend: http://backend.localhost
+- Backend-2: http://backend-2.localhost
+- PhpMyAdmin: http://pma.localhost
+
+
 ## Development
 
 ### Frontend
@@ -50,7 +59,7 @@ docker-compose -f docker-compose.yml -f backend.nodejs.docker-compose.yml -f adm
 #### Without framework
 
 1. Work in the www/[task] folder
-2. You will be able to preview your work on http://[task].ub2023-YY.hu
+2. You will be able to preview your work on http://[task].ub2023-YY.hu (http://[task].localhost)
 
 ---
 
@@ -65,7 +74,7 @@ docker-compose -f docker-compose.yml -f backend.nodejs.docker-compose.yml -f adm
 #### Laravel
 
 1. Work in `www/backend-laravel`.
-2. Preview your work at `http://backend.ub2023-YY.hu`
+2. Preview your work at http://backend.ub2023-YY.hu (http://backend.localhost)
 
 #### Node.js
 
@@ -84,9 +93,9 @@ docker-compose -f docker-compose.yml -f docker-compose.nodejs.yml logs -ft backe
 #### Laravel
 
 - Work in `www/admin-laravel`.
-- Preview your work at `http://admin.ub2023-YY.hu`
+- Preview your work at http://admin.ub2023-YY.hu (http://admin.localhost)
 
 #### JS Framework
 
 - Deploy your work to `www/admin-js`.
-- Preview your deployed work at `http://admin.ub2023-YY.hu`
+- Preview your deployed work at http://admin.ub2023-YY.hu (http://admin.localhost)
