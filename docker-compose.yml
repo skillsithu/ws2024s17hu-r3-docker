@@ -67,7 +67,7 @@ services:
       traefik.http.services.stage-planner.loadbalancer.server.port: 80
   # BACKEND-2 (STATIC) - backend-2.ub2023.hu
   backend-2:
-    image: sisakb/ws2024s17hu-r3-backend2
+    image: sisakz/ws2024s17hu-r3-backend2
     restart: always
     labels:
       traefik.enable: "true"
